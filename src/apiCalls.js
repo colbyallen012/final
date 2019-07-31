@@ -17,3 +17,14 @@ export const getDonations = async () => {
     console.log(error)
   }
 }
+
+export const addNewDonation = (donation) => {
+  return fetch('http://localhost:3001/api/v1/donations/', {
+    method: 'POST',
+    body: JSON.stringify(donation),
+    headers: {
+      'Content-Type': 'application/json'
+    }    
+  })
+  .then(response => response.json())
+}

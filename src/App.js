@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import { getAnimals, getDonations } from './apiCalls';
+import { getAnimals, getDonations, addNewDonation } from './apiCalls';
 import { connect } from 'react-redux';
 import { showAnimals, showDonations } from './actions'
 import AnimalContainer from './AnimalContainer'
@@ -18,11 +18,15 @@ class App extends Component{
     .then(donations => this.props.showDonations(donations))
   }
 
+  addDonation = (state) => {
+    addNewDonation(state)
+  }
+
   render () {
     return (
       <div className='app'>
         <h1>Animal Rescue</h1>
-        <DonationForm />
+        <DonationForm donate={this.addDonation}/>
         <DonationContainer donations={this.props.donations} />
         <AnimalContainer animals={this.props.animals} />
       </div>

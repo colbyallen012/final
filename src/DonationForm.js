@@ -15,10 +15,15 @@ class DonationForm extends Component {
     this.setState({ [name]: value })    
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.donate(this.state)
+  }
+
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input 
             type='text'
             value={this.state.name}
@@ -33,6 +38,7 @@ class DonationForm extends Component {
             placeholder='Donation Amount'
             onChange={this.handleChange}          
           />
+          <button>Donate!</button>
         </form>
       </div>
     )
