@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import './App.css';
+import { getAnimals } from './apiCalls'
 
 
 class App extends Component{
+
+  componentDidmount() {
+    getAnimals()
+  }
 
   render () {
     return (
