@@ -3,7 +3,7 @@ import './App.css';
 import { getAnimals } from './apiCalls';
 import { connect } from 'react-redux';
 import { showAnimals } from './actions'
-
+import AnimalContainer from './AnimalContainer'
 
 
 class App extends Component{
@@ -17,6 +17,7 @@ class App extends Component{
     return (
       <div className='app'>
         <h1>Animal Rescue</h1>
+        <AnimalContainer animals={this.props.animals} />
       </div>
     )
   }
