@@ -6,7 +6,8 @@ const rootReducer = combineReducers({
   animals: animalsReducer,
   isLoading,
   errorMessage: hasErrored,
-  donations: donationsReducer
+  donations: donationsReducer,
+  addDonation: donationsReducer
 })
 
 export default rootReducer;

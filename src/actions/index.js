@@ -17,3 +17,8 @@ export const showDonations = (donations) => ({
   type: 'SHOW_DONATIONS',
   donations
 })
+
+export const addDonation = (donation) => ({
+  type: 'ADD_DONATION',
+  donation
+})
