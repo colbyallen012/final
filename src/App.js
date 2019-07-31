@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
 import './App.css';
-import { getAnimals } from './apiCalls'
+import { getAnimals } from './apiCalls';
+import { connect } from 'react-redux';
+import { showAnimals } from './actions'
+
 
 
 class App extends Component{
 
-  componentDidmount() {
+  componentDidMount() {
     getAnimals()
+    .then(animals => this.props.showAnimals(animals))
   }
 
   render () {
@@ -18,4 +22,12 @@ class App extends Component{
   }
 }
 
-export default App;
+const mapStateToProps = store => ({
+  animals: store.animals
+})
+
+const mapDispatchToProps = dispatch => ({
+  showAnimals: (animals) => dispatch(showAnimals(animals))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
