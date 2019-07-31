@@ -4,6 +4,7 @@ import { getAnimals, getDonations } from './apiCalls';
 import { connect } from 'react-redux';
 import { showAnimals, showDonations } from './actions'
 import AnimalContainer from './AnimalContainer'
+import DonationContainer from './DonationContainer'
 
 
 class App extends Component{
@@ -20,6 +21,7 @@ class App extends Component{
     return (
       <div className='app'>
         <h1>Animal Rescue</h1>
+        <DonationContainer donations={this.props.donations} />
         <AnimalContainer animals={this.props.animals} />
       </div>
     )
