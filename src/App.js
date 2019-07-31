@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import { getAnimals } from './apiCalls';
+import { getAnimals, getDonations } from './apiCalls';
 import { connect } from 'react-redux';
 import { showAnimals } from './actions'
 import AnimalContainer from './AnimalContainer'
@@ -11,6 +11,8 @@ class App extends Component{
   componentDidMount() {
     getAnimals()
     .then(animals => this.props.showAnimals(animals))
+
+    getDonations()
   }
 
   render () {
