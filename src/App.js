@@ -3,9 +3,9 @@ import './App.css';
 import { getAnimals, getDonations, addNewDonation } from './apiCalls';
 import { connect } from 'react-redux';
 import { showAnimals, showDonations } from './actions'
-import AnimalContainer from './AnimalContainer'
-import DonationContainer from './DonationContainer'
-import DonationForm from './DonationForm'
+import AnimalContainer from './Containers/AnimalContainer/AnimalContainer'
+import DonationContainer from './Containers/DonationContainer/DonationContainer'
+import DonationForm from './Components/DonationForm/DonationForm'
 
 
 class App extends Component{
@@ -25,8 +25,10 @@ class App extends Component{
   render () {
     return (
       <div className='app'>
-        <h1>Animal Rescue</h1>
-        <DonationForm donate={this.addDonation}/>
+        <header className='header'>
+          <h1>Animal Rescue</h1>
+          <DonationForm donate={this.addDonation}/>
+        </header>
         <DonationContainer donations={this.props.donations} />
         <AnimalContainer animals={this.props.animals} />
       </div>

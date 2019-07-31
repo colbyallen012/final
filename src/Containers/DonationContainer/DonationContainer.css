@@ -1,0 +1,13 @@
+.donation-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px 50px;
+  /* justify-content: center; */
+}
+
+.rec-donations {
+  background-color: #B9D6F2;
+  margin: 0px;
+  padding: 20px;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Animal from './Animal'
+import Animal from '../../Components/Animal/Animal'
 import './AnimalContainer.css'
 
 const AnimalContainer = ({animals}) => {
@@ -10,13 +10,17 @@ const AnimalContainer = ({animals}) => {
         name={animal.name}
         species={animal.species}
         description={animal.description}
+        key={animal.id}
       />
     )
   })
 
   return (
-    <div className='animal-container'>
-      {displayAnimals}
+    <div>
+      <h2 className='rec-donations'>Recent Donations</h2>
+      <div className='animal-container'>
+        {displayAnimals}
+      </div>
     </div>
   )
 }

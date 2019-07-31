@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
-import { addDonation } from './actions'
+import { addDonation } from '../../actions'
+import './DonationForm.css'
 
 class DonationForm extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class DonationForm extends Component {
     this.state = {
       id: Date.now(),
       name: '',
-      donation: 0
+      donation: ''
     }
   }
 
@@ -21,12 +22,13 @@ class DonationForm extends Component {
     e.preventDefault();
     this.props.donate(this.state)
     this.props.addDonation(this.state)
+    this.setState({name: '', donation: ''})
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className='donate-input' onSubmit={this.handleSubmit}>
           <input 
             type='text'
             value={this.state.name}

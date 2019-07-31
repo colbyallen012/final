@@ -1,6 +1,8 @@
 .animal {
-  height: 425px;
+  border: 1px solid black;
+  height: 440px;
   margin: 10px;
+  text-align: center;
   width: 300px;
 }
 
