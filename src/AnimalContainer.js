@@ -1,5 +1,6 @@
-import React from '.react';
+import React from 'react';
 import Animal from './Animal'
+import './AnimalContainer.css'
 
 const AnimalContainer = ({animals}) => {
   const displayAnimals = animals.map(animal => {
