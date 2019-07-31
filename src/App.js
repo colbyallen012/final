@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import { getAnimals, getDonations } from './apiCalls';
 import { connect } from 'react-redux';
-import { showAnimals } from './actions'
+import { showAnimals, showDonations } from './actions'
 import AnimalContainer from './AnimalContainer'
 
 
@@ -13,6 +13,7 @@ class App extends Component{
     .then(animals => this.props.showAnimals(animals))
 
     getDonations()
+    .then(donations => this.props.showDonations(donations))
   }
 
   render () {
@@ -26,11 +27,13 @@ class App extends Component{
 }
 
 const mapStateToProps = store => ({
-  animals: store.animals
+  animals: store.animals,
+  donations: store.donations
 })
 
 const mapDispatchToProps = dispatch => ({
-  showAnimals: (animals) => dispatch(showAnimals(animals))
+  showAnimals: (animals) => dispatch(showAnimals(animals)),
+  showDonations: (donations) => dispatch(showDonations(donations))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
